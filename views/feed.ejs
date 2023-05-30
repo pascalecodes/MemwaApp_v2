@@ -1,0 +1,41 @@
+<%- include('partials/log_header') -%>
+<!-- <%- include('partials/add_btn') -%> -->
+
+<!-- <h3>THIS IS A FEED PAGE</h3> -->
+<div class="px-4 py-5 my-5 text-center">
+  <h1 class="display-5 fw-bold">Memwa Story Feed</h1>
+
+  <div class="container">
+    <div class="row justify-content-center mt-5">
+      <ul class="row list-unstyled">
+        <% for(var i=0; i<posts.length; i++) {%>
+          <li class="col-4 justify-content-between mt-5">
+            <a href="/post/<%= posts[i]._id%>">
+              <h5><%= posts[i].title%></h5>
+            </a>
+              <%if(ext[i] == '.mkv' || ext[i] == '.mp4' || ext[i]== '.webm'){ %>
+                <video
+                id="demo-player"
+                controls
+                class="img-fluid cld-video-player">
+                
+                <source src="<%= posts[i].media%>" type="video/mp4" class="card-img-top" alt="<%= posts[i].title%>" />
+                </video>
+                <%}else {%>
+                  <img class="img-fluid" width="800" height="900" src="<%= posts[i].media%>" />
+                <%}%>
+              <div class="d-flex align-items-center justify-content-between"> 
+                <h5 class="d-flex  justify-content-start" >By: <%= posts[i].user.userName%></h5>
+                <h5 class="d-flex  justify-content-end">Likes: <%= posts[i].likes %></h5>
+              </div>
+          </li>
+        <% } %>
+        </ul>
+    </div>
+  </div>  
+
+  <!-- <script src="/cloudinary-core/cloudinary-core.js" type="text/javascript"></script>
+
+  <script src="https://unpkg.com/cloudinary-video-player@1.9.0/dist/cld-video-player.min.js" 
+      type="text/javascript"></script> -->
+<%- include('partials/footer') -%>
