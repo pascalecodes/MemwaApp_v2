@@ -1,6 +1,6 @@
 {
-  "name": "memwa-stories",
-  "version": "1.0.0",
+  "name": "memwa-app-v2",
+  "version": "2.0.0",
   "description": "Memwa website for collecting and capturing memories",
   "main": "server.js",
   "scripts": {
