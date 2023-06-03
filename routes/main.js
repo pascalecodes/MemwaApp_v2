@@ -22,23 +22,9 @@ router.get("/login", authController.getLogin);
 router.post("/login", authController.postLogin);
 router.get("/logout", authController.logout);
 router.get("/signup", authController.getSignup);
-//router.get("/watch", ensureAuth, homeController.getWatch)
 router.get("/watch", ensureAuth, homeController.getVideo)
-//router.get("/playlist", ensureAuth, homeController.getPlaylist)
 router.post("/signup", authController.postSignup);
-//router.get("/capture", ensureAuth, captureController.getCapture);
-//router.get("/capture/upload", ensureAuth, captureController.getUpload)
-//router.post("/capture/upload", ensureAuth, captureController.uploadFile)
-// router.post("/capture/videos", upload.single("file"), captureController.uploadVideo)
-//router.get("/find", ensureAuth, findController.getFind)
 router.get("/find", ensureAuth, findController.findPost)
 router.post("/find", ensureAuth, findController.findPost)
-// router.get("/find/posts", postsController.findPost)
-// async (req, res) => {
-//     const { resName } = req.query;
-//     const restaurants = await Restaurant.find({ $text: { $search: { name: resName } } });
-//     res.render('restaurants', { restaurants });
-// })
-//router.post("/find", ensureAuth, findController.uploadFile)
 
 module.exports = router;
