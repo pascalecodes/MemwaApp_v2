@@ -13,9 +13,7 @@
   <h4>Self Capture</h4> 
   <div class="selfCapture-container mx-auto">
     <a href="/capture/#uploadPageSec"><img id=record-link src="/imgs/upload-btn.png" alt="upload arrow image" class=" mx-auto" width="80" height="80"><span>Upload</span></a>
-          <!-- <a href="#">Upload</a> -->
     <a href="/capture"><img id=record-link src="/imgs/record-icon.png" alt="record icon" class=" mx-auto" width="80" height="80">Record</a>
-          <!-- <button>Record a Video</button> -->
 </div>
 </main>   
 
@@ -33,16 +31,7 @@
         <ul class="row list-unstyled">
           <% for(var i=0; i<posts.length; i++) {%>
             <li class="col-3 justify-content-between mt-4">
-              <!-- <a href="/post/<%= posts[i]._id%>">
-                <h5><%= posts[i].title%></h5>
-                <img class="img-fluid" src="<%= posts[i].media%>">
-                <h5>Likes: <%= posts[i].likes %></h5>
-              </a> -->
               <div class="justify-content-between mt-3 card">
-                <!-- <img src="<%= posts[i].media%>" class="card-img-top" alt="<%= posts[i].title%>">
-                <video class="img-fluid" autoplay loop muted>
-                  <source src="<%= posts[i].media%>" type="video/mp4" class="card-img-top" alt="<%= posts[i].title%>" />
-                </video> -->
                 <%if(ext[i] == '.mkv' || ext[i] =='.mp4'|| ext == '.webm'){ %>
                   <video 
                   id="demo-player"
@@ -80,12 +69,8 @@
       <div class="search-container">
           <div class="input-group mb-3">
             <div class="form-outline col-lg-10 mx-auto">
-              <!-- <input placeholder="Search for stories or people" type="text" id="search-input"  class="form-control" name="searchTerm"/> -->
-              
               <form class="search" action="/find" method="GET">
                 <input type="search" placeholder="Search for stories or people"  class="form-control" name="searchTerm" />
-
-              <!-- <label class="form-label" for="form1">Search</label> -->
             </div>
             <button id="search-button" type="submit" class="btn btn-primary">
               <i class="fas fa-search"></i>
@@ -94,7 +79,6 @@
           </div>   
       </div>
       <p>Browse through <b>2,100</b> stories from <b>69</b> countries</p>
-      <!-- <img src="imgs/map.png" class="img-fluid"  alt="..." class="mx-auto" style="width: 1200px"> -->
     </div>
   </div>
   
