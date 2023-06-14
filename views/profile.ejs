@@ -13,18 +13,14 @@
           <div>
               <h5>Profile Info</h5>
               <div class="profile-page">
-              <!-- <img id="avatar" src="/imgs/avatar.webp" class="rounded-circle justify-content-center" style="width: 150px;"alt="Profile Image" /> -->
                 <img id="avatar" src="<%= user.avatar ? user.avatar : "/imgs/avatar.webp" %>" class="rounded-circle" style="width: 150px;"alt="Profile Image" />
 
                 <form id='avatarForm' action="/uploadAvatar" enctype="multipart/form-data" method="POST" >
                   <input id="imageFile" type="file" name="avatar" />
-                  <!-- <input id="preview" type="submit" value="preview" /> -->
                   <button type="submit" class="btn btn-primary" value="Upload">Save</button>
                 </form>
               </div>
               <div class="profile-page">
-                <!-- <input type="file" class="form-control" id="avatarUpload" name="avatar"> -->
-                <!-- <p><strong>Avatar</strong>:<input type="file" name="avatar" ><input type="submit" value="save" /></p> -->
                 <p><strong>User Name</strong>: <%= user.userName %></p>
                 <p><strong>First Name</strong>: <%= user.firstName %></p>
                 <p><strong>Last Name</strong>: <%= user.lastName %></p>
@@ -35,7 +31,6 @@
               </div>
           </div>
           <div class="mt-5">
-            <!-- Move section to add stories file -->
             <h4>Create a Post</h4>
             <form action="/post/createPost" enctype="multipart/form-data" method="POST">
               <div class="mb-3">
@@ -66,22 +61,6 @@
             </form>
           </div>
       </div>
-    
-      <!-- Feed List Section -->
-      <!-- <div class="col-6">
-        <ul class="row list-unstyled">
-        <% for(var i=0; i<posts.length; i++) {%>
-          <li class="col-6 justify-content-between mt-5">
-            <a href="/post/<%= posts[i]._id%>">
-              <img class="img-fluid" src="<%= posts[i].media%>">
-            </a>
-          </li>
-        <% } %>
-        </ul>
-        <div class="row justify-content-center mt-5">
-          <a class="btn btn-primary" href="/feed">Return to Feed</a>
-        </div>  
-      </div>   -->
       <div class="col-6">
         <h4>Capture a New Moment</h4>
           <p>Record a moment using your device camera and mic</p>
@@ -111,8 +90,7 @@
                 <li class="col-3 justify-content-between mt-5">
                   <h5><%= posts[i].title%></h5>
                   <a href="/post/<%= posts[i]._id%>">
-                    <!-- <img class="img-fluid" src="<%= posts[i].media%>"> -->
-                    <%if(ext[i] == '.mkv' ||ext == '.mkv'  || ext == '.webm'){ %>
+                    <%if(ext[i] == '.mkv' ||ext == '.mp4'  || ext == '.webm'){ %>
                       <video
                       id="demo-player"
                       controls
@@ -137,5 +115,3 @@
   </div>
 </div>
 <script src="/js/avatar.js" type="text/javascript"></script>
-
-<!-- <%- include('partials/footer') -%> -->
