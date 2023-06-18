@@ -6,26 +6,25 @@ Website to record, watch and search for user stories. Users can login to their p
 ![home page screenshot](https://tinypic.host/images/2023/01/09/Screenshot-2023-01-08-at-10.12.17-PM.md.png)
 
 ## Who Can Use It:
-Anyone that wants an easy way to capture videos, upload videos and watch videos from others.
+Anyone that want an easy way to capture memorable stories, upload videos and watch stories from others.
 
 ## How It's Made:
 
 **Tech used:** HTML, CSS, JavaScript, Bootstrap, mongoDB, Cloudinary, ejs, express, passport, mongoose
 
-Node is a pretty lightweight server choice and can be spun up fairly easily. For the backend mondoDB made the most since for the simple mongoose schema creations and since each upload could vary in terms of missing field didn't want to use a SQL database here. Cloudinary waas the choice for media storage so many options for uploading and optimizing media. Down the line haveing different versions of the video based on client playing the video will come in handy. By using Express' built in middleware architecture we could cleanly write fallbacks and we can build images using an API that's very similar to the front-end canvas API. 
+Node is a pretty lightweight server choice and can be spun up fairly easily. For the backend mondoDB made the most since for the simple mongoose schema creations and since each upload could vary in terms of missing field didn't want to use a SQL database here. Cloudinary was the choice for media storage because of so many options for uploading and optimizing media. Down the line having different versions of the video based on client playing the video will come in handy. By using Express' built in middleware architecture we could cleanly write fallbacks.
 
 MVP features: 
 - create an account
-- add a video/pictures-upload
-- add tag a video/pictures
+- add a video or picture-upload
+- tag videos/pictures
 - record a video- capture
 - watch a video on feed or video carousel page
 - comment and like video/pictures
 - Search for a video/pictures in database
-- comment and rate video
-- edit user profile, with avatar image
-- download recorded video
-
+- edit user profile
+- add image avatar to profile
+- download your recorded video
 
 ## Additions & Optimizations
 - Add other social logins
