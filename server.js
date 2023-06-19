@@ -62,13 +62,11 @@ app.use("/post", postRoutes);
 app.use("/comment", commentRoutes); // add the use comment route to tell it where to go
 app.use("/search", findRoutes); // add find the routes
 app.use("/capture", captureRoutes); 
-//app.use("/capture/videos", mainRoutes);
 
 // Default route
 app.get("*", (req, res) => {
   
-  // Here user can also design an
-  // error page and render it 
+  // Can also design error page and render it 
   res.send('Page not found');
 });
 
