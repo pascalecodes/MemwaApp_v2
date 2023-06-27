@@ -13,17 +13,9 @@
     height: 90px;
     margin-bottom: 40px;
 }
-/* .capture-container.wrapper {
-    display: flex;
-    justify-content: center;
-} */
 .capture-container h1 {
     color: #3563E9;
 }
-
-/* .selfCapture-container {
-    width: 50%; 
-} */
 
 .self-capture-text {
     height: 20%;
