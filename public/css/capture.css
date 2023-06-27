@@ -30,22 +30,15 @@
     justify-content:space-around;
     margin-left:8vw;
     margin-bottom:200px;
-    /* flex-wrap: wrap;
-    flex-flow: row; */
 }
 .selfCapture-container-page{
     width: 100%;
     display: flex;
-    /* align-items: center;
-    justify-content: center; */
-
 }
 .recording-box-capture {
     height: 80vh;
     width: 100%;
     display: flex;
-    /* justify-content:center;
-    align-items: center;  */
     border: solid 1px red;
 }
 
