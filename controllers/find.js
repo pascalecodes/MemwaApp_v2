@@ -7,25 +7,24 @@ module.exports = {
   getSearch: (req, res) => {
       res.render('search.ejs', {results: [] })
   },
-  //I think we don't need this anymore
-  // postSearch: async (req, res) => {
-  //   const query = req.body.q
-  //   try {
-  //     const results =  await Post.find({
-  //       $or: [
-  //         {title: {$regex: query, $options: 'i'}},
-  //         {caption: {$regex: query, $options: 'i'}},
-  //         {description: {$regex: query, $options: 'i'}}
-  //       ]
-  //     })
-  //     res.render('search.ejs', {results})
-  //     console.log(`post results: ${results}`)
+  postSearch: async (req, res) => {
+    const query = req.body.q
+    try {
+      const results =  await Post.find({
+        $or: [
+          {title: {$regex: query, $options: 'i'}},
+          {caption: {$regex: query, $options: 'i'}},
+          {description: {$regex: query, $options: 'i'}}
+        ]
+      })
+      res.render('search.ejs', {results})
+      console.log(`post results: ${results}`)
 
-  //   } catch(err) {
-  //     console.error(err)
-  //     res.render('search.ejs', {results: []})
-  //   }
-  // },
+    } catch(err) {
+      console.error(err)
+      res.render('search.ejs', {results: []})
+    }
+  },
   //This is the function that is being used for the search and find functionality
   findPost: async (req, res) => {
     try {
