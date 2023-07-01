@@ -32,7 +32,6 @@ module.exports = {
       res.render('error/404')
     }
   },
-  // test getvideo player function
   getVideo: async (req, res) =>{
     try{
       const posts = await Post.find().sort({ createdAt: "desc" }).populate('user').lean();
