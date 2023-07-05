@@ -28,9 +28,14 @@
         <div class="carousel-inner">
           <% detail.forEach(function(video, index) { %>
             <div class="item <% if(index == 0) { %> active <% } %> ">
-              <div class="text-overlay">
+          
+          <div>
+            <p class="mx-auto video-title text-overlay"><%= video.title %></p>
+            <p class="mx-auto video-title text-overlay"><%= video.description %></p>
+          </div>
+              <!-- <div class="text-overlay">
                 <h3 class="video-title text-overlay"><%= video.title %></h3>
-              </div>
+              </div> -->
               <%if(video.ext == '.mkv' || video.ext =='.mp4'){ %>
                 <video class="embed-responsive-item" controls poster="<%= video.poster %>">
                   <source src="<%= video.url %>" type="video/webm">
@@ -39,10 +44,13 @@
               <%}else {%>
                 <center><image src="<%= video.url %>" type="jpg" class="embed-responsive-item"></image></center>
               <%}%>
+              
             </div>
-            <div class="text-overlay">
+           
+            <!-- <div class="text-overlay">
+              <h3 class="video-title text-overlay"><%= video.title %></h3>
               <h3 class="video-text text-overlay"><%= video.caption %></h3>
-            </div>
+            </div> -->
           <% }); %>
         </div>
         <a class="left carousel-control" href="#videoCarousel"  data-slide="prev">
