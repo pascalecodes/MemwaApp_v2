@@ -28,11 +28,16 @@
         <div class="carousel-inner">
           <% detail.forEach(function(video, index) { %>
             <div class="item <% if(index == 0) { %> active <% } %> ">
-          
-          <div>
+              <div class="info-box">
+                <a href="/post/<%= video.id%>"><h4 class=" text-white video-title text-overlay"><%= video.title %></h4>
+                <p class="text-white video-text text-overlay"><%= video.description %></p>
+                <p class="text-white video-caption text-overlay"><%= video.caption %></p>
+              </a>
+              </div>
+          <!-- <div>
             <p class="mx-auto video-title text-overlay"><%= video.title %></p>
             <p class="mx-auto video-title text-overlay"><%= video.description %></p>
-          </div>
+          </div> -->
               <!-- <div class="text-overlay">
                 <h3 class="video-title text-overlay"><%= video.title %></h3>
               </div> -->
@@ -44,9 +49,7 @@
               <%}else {%>
                 <center><image src="<%= video.url %>" type="jpg" class="embed-responsive-item"></image></center>
               <%}%>
-              
             </div>
-           
             <!-- <div class="text-overlay">
               <h3 class="video-title text-overlay"><%= video.title %></h3>
               <h3 class="video-text text-overlay"><%= video.caption %></h3>

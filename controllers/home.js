@@ -45,6 +45,7 @@ module.exports = {
             title: video.title,
             user: video.user.userName,
             description: video.description,
+            caption: video.caption,
             url: video.media,
             id: video._id,
             ext: path.extname(video.media)
