@@ -2,6 +2,7 @@ const cloudinary = require("../middleware/cloudinary");
 require('dotenv').config();
 const Post= require("../models/Post");
 const path = require('path')
+const User = require("../models/User")
 
 module.exports = {
   getSearch: (req, res) => {
@@ -31,10 +32,11 @@ module.exports = {
       const searchTerm= req.query.searchTerm;
       let posts;
       if(searchTerm){
-        posts = await Post.find({$or: [{title: {$regex: searchTerm, $options: 'i'}}, {caption: {$regex: searchTerm, $options: 'i'}}, {description: {$regex: searchTerm, $options: 'i'}}]});
+        posts = await Post.find({$or: [{title: {$regex: searchTerm, $options: 'i'}}, {caption: {$regex: searchTerm, $options: 'i'}}, {description: {$regex: searchTerm, $options: 'i'}}]})
       }else {
         posts = await Post.find()
       } 
+      console.log(posts)
       res.render("find.ejs", { posts: posts, searchTerm: searchTerm});
   
     } catch (err) {
