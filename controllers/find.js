@@ -27,6 +27,25 @@ module.exports = {
     }
   },
   //This is the function that is being used for the search and find functionality
+  // findPost: async (req, res) => {
+  //   try {
+  //     const searchTerm= req.query.searchTerm;
+  //     let posts;
+  //     if(searchTerm){
+  //       posts = await Post.find({$or: [{title: {$regex: searchTerm, $options: 'i'}}, {caption: {$regex: searchTerm, $options: 'i'}}, {description: {$regex: searchTerm, $options: 'i'}}]})
+  //     }else {
+  //       posts = await Post.find()
+  //     } 
+  //     console.log(posts)
+  //     res.render("find.ejs", { posts: posts, searchTerm: searchTerm});
+  
+  //   } catch (err) {
+  //     console.log(err);
+  //     res.render('error/500')
+  //   }
+  // },
+
+  //testing find post function with user search
   findPost: async (req, res) => {
     try {
       const searchTerm= req.query.searchTerm;
@@ -36,14 +55,23 @@ module.exports = {
       }else {
         posts = await Post.find()
       } 
-      console.log(posts)
+      //console.log(posts)
+      if(posts.length === 0){
+        const users = await User.find({$or: [{userName: {$regex: searchTerm, $options: 'im'}}, {firstName: {$regex: searchTerm, $options: 'im'}}, {lastName: {$regex: searchTerm, $options: 'im'}}]})
+        //console.log(users)
+        if(users.length > 0){
+          for(let user of users){
+            posts = await Post.find({ user: user._id })
+          }
+        }
+      }
       res.render("find.ejs", { posts: posts, searchTerm: searchTerm});
   
     } catch (err) {
       console.log(err);
       res.render('error/500')
     }
-  },
+},
 };
 
 
