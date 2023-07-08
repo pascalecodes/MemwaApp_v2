@@ -31,23 +31,25 @@
         <ul class="row list-unstyled">
           <% for(var i=0; i<posts.length; i++) {%>
             <li class="col-3 justify-content-between mt-4">
-              <div class="justify-content-between mt-3 card">
+              <div class=" mt-3 card">
+                <div class="card-header" >
+                  <h5 class="card-title" ><%= posts[i].title%></h5>
+                </div>
                 <%if(ext[i] == '.mkv' || ext[i] =='.mp4'|| ext == '.webm'){ %>
                   <video 
                   id="demo-player"
                   controls
-                  class="img-fluid cld-video-player">
-                  <source src="<%= posts[i].media%>" type="video/mp4" class="card-img-top" alt="<%= posts[i].title%>" />
+                  class="img-fluid card-img-top cld-video-player"  >
+                  <source src="<%= posts[i].media%>" type="video/mp4"  alt="<%= posts[i].title%>" />
                   </video>
                   <%}else {%>
-                    <img class="card-img-top" src="<%= posts[i].media%>" alt="<%= posts[i].title%>" />
+                    <img class=" img-fluid card-img-top" src="<%= posts[i].media%>" alt="<%= posts[i].title%>" />
                   <%}%>
                 <div class="card-body">
-                  <h5 class="card-title"><%= posts[i].title%></h5>
-                  <p class="card-text"><%= posts[i].caption%></p>
-                  <a href="/post/<%= posts[i]._id%>"class="btn btn-primary">Go to post</a>
-                  <h5>Likes: <%= posts[i].likes %></h5>
-                  <h5>By: <%= posts[i].user.userName%></h5>
+                  <h6 class="card-text"><%= posts[i].caption%></h6>
+                  <h6 class="card-text">Likes: <%= posts[i].likes %></h6>
+                  <h6 class="card-text">By: <%= posts[i].user.userName%></h6>
+                  <a href="/post/<%= posts[i]._id%>"class="card-link">Go to post</a>
                 </div>
               </div>
             </li>
