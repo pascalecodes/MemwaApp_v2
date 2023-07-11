@@ -15,12 +15,10 @@
                 <video
                 id="demo-player"
                 controls
-                class="img-fluid cld-video-player">
-                
-                <source src="<%= posts[i].media%>" type="video/mp4" class="card-img-top" alt="<%= posts[i].title%>" />
+                class="img-fluid cld-video-player"  <source src="<%= posts[i].media%>" type="video/mp4" class="card-img-top" alt="<%= posts[i].title%>" />
                 </video>
                 <%}else {%>
-                  <img class="img-fluid" width="800" height="900" src="<%= posts[i].media%>" />
+                  <img class="img-fluid" src="<%= posts[i].media%>" />
                 <%}%>
               <div class="d-flex align-items-center justify-content-between"> 
                 <h5 class="d-flex  justify-content-start" >By: <%= posts[i].user.userName%></h5>
