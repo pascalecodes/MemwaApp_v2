@@ -2,9 +2,9 @@
 
 <div class="px-4 py-5 my-5 text-center">
   <h1 class="display-5 fw-bold">Memwa Story Feed</h1>
-
-  <div class="container">
-    <div class="row justify-content-center mt-5">
+</div> 
+  <div class="container row mt-5">
+    <!-- <div class="row justify-content-center mt-5">
       <ul class="row list-unstyled">
         <% for(var i=0; i<posts.length; i++) {%>
           <li class="col-4 justify-content-between mt-5">
@@ -27,7 +27,23 @@
           </li>
         <% } %>
         </ul>
+    </div> -->
+    <div >
+      <ul>
+        <% for(var i=0; i<posts.length; i++) {%>
+          <li >
+            <a href="/post/<%= posts[i]._id%>">
+              <h5><%= posts[i].title%> </h5>
+            </a>
+            <h5><%= posts[i].caption %> by: <%= posts[i].user.userName%></h5>
+            <h5>Likes: <%= posts[i].likes %></h5>
+          </li>
+        <% } %>
+        </ul>
     </div>
-  </div>  
+  </div> 
+
+      <!-- list feed -->
+      
 
 <%- include('partials/footer') -%>
